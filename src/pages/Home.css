@@ -1,0 +1,31 @@
+/* Home.css */
+
+.home-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+}
+
+.home-container img {
+    max-width: 100%;
+    height: auto;
+}
+
+.home-container h1 {
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+
+.home-container input,
+.home-container button {
+    padding: 10px 15px;
+    margin: 5px;
+}
+
+/* Media query for smaller screens */
+@media (max-width: 600px) {
+    .home-container h1 {
+        font-size: 1.5em;
+    }
+}

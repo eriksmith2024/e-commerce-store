@@ -1,0 +1,57 @@
+.navbar {
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 70%;
+    height: 50px;
+    position: fixed;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    padding: 10px;
+    background-color: teal;
+    border-radius: 10px;
+    margin-bottom: 20px; /* Adjust space between navbar and content */
+    z-index: 1000; /* Ensure navbar stays on top */
+    border-bottom: solid 5px black;
+    flex-wrap: nowrap; /* Ensure items do not wrap by default */
+}
+
+/* Ensure buttons fit well */
+.navbutton {
+    background-color: black;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px; /* Default font size */
+    cursor: pointer;
+    flex: 1; /* Allow buttons to grow and fill space */
+}
+
+/* Responsive adjustments */
+@media screen and (max-width: 768px) {
+    .navbar {
+        width: 90%; /* Make it wider to fit mobile screens */
+        flex-direction: row; /* Keep row direction */
+        height: auto;
+        padding: 15px;
+        border-radius: 0; /* Optional: make it full-width */
+        margin-bottom: 20px; /* Ensure space between navbar and content */
+        border-bottom: solid 5px black;
+        flex-wrap: wrap; /* Allow wrapping to multiple rows */
+        justify-content: center; /* Center the items on mobile */
+    }
+
+    .navbutton {
+        width: 50; /* Set width of each button for 3 buttons per row */
+        margin: 5px; /* Add spacing between buttons */
+        font-size: 12px; /* Shrink the font size for mobile */
+    }
+
+    /* Adjust the margin-top for smaller screens */
+    body {
+        margin-top: 100px; /* Increase space for smaller screens */
+    }
+}

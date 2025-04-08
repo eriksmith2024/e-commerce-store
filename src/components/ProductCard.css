@@ -1,0 +1,157 @@
+.ProductCard {
+    text-align: center;
+    margin: 20px;
+    padding: 5px;
+    border-bottom: black 3px solid;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start; /* Adjusted */
+}
+
+.Card.Body {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    justify-content: flex-start; /* Adjusted */
+}
+
+.btns {
+    margin-top: auto;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.ImageTitleRemove {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.product-image {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 8px;
+    border: black 2px solid;
+    margin: 0 auto;
+    display: block;
+    margin-top: 10px;
+    margin-bottom: 1px;
+    max-height: 200px;
+    object-fit: contain;
+}
+
+.priceBox {
+    display: inline-block;
+    background-color: cadetblue;
+    border-radius: 15px;
+    border: solid white 2px;
+    color: white;
+    font-size: x-large;
+    max-width: 100px;
+    padding: 5px;
+    margin: 0;
+}
+
+.priceBox-cart { /* New style for cart price */
+    display: inline-block;
+    background-color: cadetblue;
+    border-radius: 15px;
+    border: solid white 2px;
+    color: white;
+    font-size: x-large;
+    max-width: 100px;
+    padding: 5px;
+    margin: 5px auto -25px auto; /* Adjusted */
+    position: relative;
+    z-index: 1;
+}
+
+button {
+    margin-right: 10px;
+    border: solid black 3px;
+    padding: 5px 10px;
+    font-size: 1rem;
+}
+
+.cart-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.total-price {
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+.desc_price {
+  margin-top: 10px;
+}
+
+.card-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-align: center;
+    margin: 0;
+    padding-top: 0;
+}
+
+.ProductCard {
+    position: relative;
+}
+
+.ProductCard .dropdown {
+    position: static;
+    width: 100%;
+    margin-bottom: 5px; /* Adjusted */
+}
+
+.ProductCard .dropdown-menu {
+    position: absolute;
+    z-index: 1000;
+    display: none;
+    width: 100%;
+    padding: 0;
+}
+
+.ProductCard .dropdown.show .dropdown-menu {
+    display: block;
+}
+
+.ProductCard .dropdown-toggle {
+    width: 100%;
+}
+
+.ProductCard .dropdown-item {
+    display: block;
+    width: 95%;
+    text-align: center;
+    padding: 0px;
+    background-color: grey;
+    color: black;
+    border: solid 2px white;
+}
+
+.ProductCard .dropdown-item:hover {
+    background-color: blue;
+}
+
+.btnPrice{
+    width: 50%
+}
+
+.btnCart{
+    width: 50%
+}
+
+.cart-item-details { /* New style */
+    display: flex;
+    flex-direction: column;
+}
+
+.cart-item-info { /* New style */
+    margin-bottom: 2px; /* Reduced spacing */
+}

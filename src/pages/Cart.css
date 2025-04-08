@@ -1,0 +1,25 @@
+.products-grid {
+    display: grid;
+    grid-template-columns: 1fr; /* Default to 1 column for mobile */
+    gap: 10px;
+    justify-content: center;
+    padding: 10px;
+  }
+  
+  /* For screens larger than 768px (tablet & laptops), switch to 2-column layout */
+  @media (min-width: 768px) {
+    .products-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+  }
+  
+  /* Cart.css */
+.cart-container {
+  text-align: center;
+  padding: 20px;
+}
+
+.productCard {
+  margin-top: 20px;
+
+}

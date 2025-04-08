@@ -1,70 +1,59 @@
-# Getting Started with Create React App
+<!-- Really struggled with this task 
+I spent a week reviewing and updating my personal website and then a week doing a task for a job role with the LUHN algorithm and credit card verification which I passed. The time out meant I had to go back and re-read all the prior docs and half redo all the prior tasks & exercises to get back my react understanding. Even then it really was a challenge. 
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+DATES OF ACCESS MAY VARY SLIGHTLY BUT BASICALLY REVIEWED AND RE-DID EACH ONE OVER A DAY OR DAY AND HALF
+HyperioDev Level2-Front End Development/L2T01- NodeJS/11-033-2 NodeJS.pdf Accessed Monday 10th March 2025
+Hyperion Dev - Front End Development /L2T02 - React - Overview/ Accessed Tuesday 11th March 2025
+Hyperion Dev - Front End Development /L2T03 - React - Elements/ Accessed Wenesday 12th Match 2025
+Hyperion Dev - Level 2 - Front End Development /L2T04 - React - Components/ Accessed 13th March 2025
+Hyperion Dev Level 2 - Front End Development /L2T05 - React - Local State Management & Events/ Accessed 14th March 2025
+Hyperion Dev Level 2 - Front End Development /L2T06 - React - Hooks/ Accessed 15th March 2025
+Hyperion Dev Level 2 - /Level 2 - Front End Development/L2T07 - React - Routing/ Accessed 7th -19th March 2025
 
-## Available Scripts
 
-In the project directory, you can run:
+https://www.youtube.com/watch?v=XrtZynBLpXo Accessed 14th March 2025 - Multi page store Project initially structured around this video -->
 
-### `npm start`
+<!-- https://www.youtube.com/watch?v=7y-YyEH-eF8 Youtube video accessed 18th March 2025  around logins https://www.youtube.com/watch?v=RpbtR9XFSRE Youtube Video accessed 18th March 2025 
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+https://www.youtube.com/watch?v=psU13XU1gDY Youtube Video -  Accessed 18th March 2025 - 
+https://www.youtube.com/watch?v=UBV2vtkKR5o Youtube Video Accessd 18th March 2025
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+https://stackoverflow.com/questions/69173268/ stack overflow Accessed 18th March 2025 
+https://www.geeksforgeeks.org/react-hook-form-create-basic-reactjs-registration-and-login-form/? Accessed 18th March 2025
+how-can-i-use-local-storage-with-the-login-functionality-in-react? Accessed 18th March 2025
+https://stackoverflow.com/questions/74788127/react-and-localstorage? Accessed 18th March 2025
 
-### `npm test`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+VARIOUS Gemini chats Accessed 19th March 2025
+https://gemini.google.com/app/8b8b76763f91b2c7?is_sa=1&is_sa=1&android-min-version=301356232&ios-min-version=322.0&campaign_id=bkws&utm_source=sem&utm_source=google&utm_medium=paid-media&utm_medium=cpc&utm_campaign=bkws&utm_campaign=2024enGB_gemfeb&pt=9008&mt=8&ct=p-growth-sem-bkws&gad_source=1&gclid=Cj0KCQjw1um-BhDtARIsABjU5x4rDIbcmLJuOdm3FZ6sipmJwbGMvWVVg4BP-u29pq4VLIixllPX5HoaAhf2EALw_wcB&gclsrc=aw.ds 
 
-### `npm run build`
+https://gemini.google.com/app/221b8f6d0c7e31a1?is_sa=1&is_sa=1&android-min-version=301356232&ios-min-version=322.0&campaign_id=bkws&utm_source=sem&utm_source=google&utm_medium=paid-media&utm_medium=cpc&utm_campaign=bkws&utm_campaign=2024enGB_gemfeb&pt=9008&mt=8&ct=p-growth-sem-bkws&gad_source=1&gclid=Cj0KCQjw1um-BhDtARIsABjU5x4rDIbcmLJuOdm3FZ6sipmJwbGMvWVVg4BP-u29pq4VLIixllPX5HoaAhf2EALw_wcB&gclsrc=aw.ds
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+https://gemini.google.com/app/5f2604eaee0cb5a7?is_sa=1&is_sa=1&android-min-version=301356232&ios-min-version=322.0&campaign_id=bkws&utm_source=sem&utm_source=google&utm_medium=paid-media&utm_medium=cpc&utm_campaign=bkws&utm_campaign=2024enGB_gemfeb&pt=9008&mt=8&ct=p-growth-sem-bkws&gad_source=1&gclid=Cj0KCQjw1um-BhDtARIsABjU5x4rDIbcmLJuOdm3FZ6sipmJwbGMvWVVg4BP-u29pq4VLIixllPX5HoaAhf2EALw_wcB&gclsrc=aw.ds
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+https://gemini.google.com/app/111bcafcae10da37?is_sa=1&is_sa=1&android-min-version=301356232&ios-min-version=322.0&campaign_id=bkws&utm_source=sem&utm_source=google&utm_medium=paid-media&utm_medium=cpc&utm_campaign=bkws&utm_campaign=2024enGB_gemfeb&pt=9008&mt=8&ct=p-growth-sem-bkws&gad_source=1&gclid=Cj0KCQjw1um-BhDtARIsABjU5x4rDIbcmLJuOdm3FZ6sipmJwbGMvWVVg4BP-u29pq4VLIixllPX5HoaAhf2EALw_wcB&gclsrc=aw.ds
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+https://gemini.google.com/app/12c150bec1204a61?is_sa=1&is_sa=1&android-min-version=301356232&ios-min-version=322.0&campaign_id=bkws&utm_source=sem&utm_source=google&utm_medium=paid-media&utm_medium=cpc&utm_campaign=bkws&utm_campaign=2024enGB_gemfeb&pt=9008&mt=8&ct=p-growth-sem-bkws&gad_source=1&gclid=Cj0KCQjw1um-BhDtARIsABjU5x4rDIbcmLJuOdm3FZ6sipmJwbGMvWVVg4BP-u29pq4VLIixllPX5HoaAhf2EALw_wcB&gclsrc=aw.ds
 
-### `npm run eject`
+VARIOUS CHAT GPT Chats Accessed 19th March 2025
+https://chatgpt.com/c/67daa255-631c-8007-af4a-dc80c4459a91
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+VARIOUS CHAT GPT Chats Accessed 18th March 2025
+https://chatgpt.com/c/67d9d9d0-1cac-8007-a99c-cf73473c6680
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+https://chatgpt.com/c/67d9d7b1-9da4-8007-8503-da8748cc6244
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+https://chatgpt.com/c/67d9d5db-ba0c-8007-a305-cf57ed3ad1ac
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+https://chatgpt.com/c/67d9d31a-a5f4-8007-b147-cf7d52d65f6f
 
-## Learn More
+https://chatgpt.com/c/67d9cf26-edf8-8007-97e3-f57919eca662
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+https://chatgpt.com/c/67d9c7d5-509c-8007-9e29-482c14399b20
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+https://chatgpt.com/c/67d98c92-5db8-8007-95c2-5180aa006b16
 
-### Code Splitting
+https://chatgpt.com/c/67d9ad08-e150-8007-8874-680af4e8f8c6
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+-->
 
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)

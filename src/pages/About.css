@@ -1,0 +1,38 @@
+.about-container {
+  text-align: center;
+  padding: 20px; /* Use relative padding */
+}
+
+.about-container h4 {
+  margin-top: 20px;
+}
+
+.logo-image {
+  max-width: 200px;
+  height: auto;
+}
+
+.store-images {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 20px;
+  flex-wrap: wrap; /* Allow images to wrap */
+}
+
+.store-image {
+  max-width: 100%; /* Make images responsive */
+  height: auto;
+}
+
+/* Media query for smaller screens */
+@media (max-width: 768px) {
+  .store-images {
+      flex-direction: column; /* Stack images vertically */
+      align-items: center;
+  }
+
+  .store-image {
+      max-width: 90%; /* Adjust image width on small screens */
+  }
+}
