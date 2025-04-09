@@ -10,7 +10,6 @@ export function Navbar () {
             <Link to="/"><button className="navbutton">Home</button></Link>
             <Link to="/About"><button className="navbutton">About </button></Link>
             <Link to="/Products"><button className="navbutton">Products</button></Link>
-            <Link to="/Contact"><button className="navbutton">Contact </button></Link>
             <Link to="/Cart"><button className="navbutton">Cart</button></Link>
         </div>
     )

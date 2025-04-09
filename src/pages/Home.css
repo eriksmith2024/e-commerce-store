@@ -17,10 +17,17 @@
     margin-bottom: 20px;
 }
 
-.home-container input,
+.home-container input {
+    padding: 10px 15px;
+    margin: 5px;
+}
+
 .home-container button {
     padding: 10px 15px;
     margin: 5px;
+    background-color: Teal;
+    color: white;
+    border: solid black;
 }
 
 /* Media query for smaller screens */

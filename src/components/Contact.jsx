@@ -1,5 +1,5 @@
 import { useState } from "react"; // Imports the useState hook from React for managing local component state.
-import "./Contact.css"; 
+import "./Contact.css";
 
 // Defines the Contact component, which allows users to submit their contact information and a message.
 export function Contact() {
@@ -32,7 +32,5 @@ export function Contact() {
       {/* Button to trigger the 'handleSubmit' function when clicked. */}
       <button onClick={() => handleSubmit()}>Submit</button>
     </div>
-
-
   );
 }

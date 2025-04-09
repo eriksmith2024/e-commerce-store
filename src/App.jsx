@@ -5,7 +5,7 @@ import { Layout } from './components/Layout';
 import { About } from './pages/About';
 import { Registration } from './pages/Registration';
 import { Login } from './pages/Login';
-import { Contact } from './pages/Contact';
+import { Contact } from './components/Contact'; // Updated import path for Contact component
 import { Home } from './pages/Home';
 import { Products } from './pages/Products';
 import { Cart } from './pages/Cart';
@@ -31,7 +31,8 @@ function App() {
           <Route path="/Home" element={<Home />} />
           <Route path="/Products" element={<Products />} />
           <Route path="/About" element={<About />} />
-          <Route path="/Contact" element={<Contact />} />
+          {/* Commented out this line as Contact is now part of the Home page */}
+          {/* <Route path="/Contact" element={<Contact />} /> */}
           {/* 'Cart' and 'checkout' pages are protected and can only be accessed by logged-in users. */}
           <Route path="/Cart" element={<ProtectedRoute><Cart /></ProtectedRoute>} />
           <Route path="/checkout" element={<ProtectedRoute><Checkout /></ProtectedRoute>} />
