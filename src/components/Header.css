@@ -1,5 +1,3 @@
-/* components/Header.css */
-
 .header {
     display: flex;
     justify-content: space-between;
@@ -10,7 +8,7 @@
     width: 60%;
     margin: 0 auto;
     position: fixed;
-    top: 60px; /* Adjust or remove */
+    top: 60px;
     left: 50%;
     transform: translateX(-50%);
     z-index: 100;
@@ -23,6 +21,22 @@
     margin: 0;
 }
 
+.header-title {
+    margin-right: auto;
+}
+
+.header-welcome {
+    margin-right: auto;
+    margin-left: auto;
+    padding-top: 5px;
+    text-align: center;
+}
+
+.header-cart {
+    padding-bottom: 15px;
+    text-align: center;
+}
+
 .header strong {
     font-weight: 700;
     font-size: 1.2rem;
@@ -32,10 +46,23 @@
 /* Media query for smaller screens */
 @media (max-width: 768px) {
     .header {
-        width: 90%; /* Full width on small screens */
-        top: 0; /* Adjust top position */
-        border-radius: 0; /* remove border radius on small screens*/
-        top: 100px; /* Adjust or remove */
+        width: 100%;
+        top: 0;
+        left: 0;
+        transform: translateX(0);
+        border-radius: 0;
+        flex-direction: column;
+        height: 180px; /* Changed from a fixed height to auto */
+        padding: 0px 0;
+    }
+
+  
+    .header-cart {
+        margin: -35px 0;
+        text-align: center;
+    }
+
+    .header h1{
+        font-size: 1.2rem;
     }
 }
-

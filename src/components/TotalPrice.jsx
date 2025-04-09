@@ -1,6 +1,8 @@
+import { useSelector } from "react-redux";
 import { useEffect, useState } from "react";
 
-export function TotalPrice({ cart }) {
+export function TotalPrice() {
+  const cart = useSelector((state) => state.cart.items);
   const [totalPrice, setTotalPrice] = useState(0);
   const [totalItems, setTotalItems] = useState(0);
 
@@ -18,7 +20,7 @@ export function TotalPrice({ cart }) {
   return (
     <div className="cart-footer">
       <div className="total-price">Total Items: {totalItems}</div>
-      <div className="total-price" style={{ marginLeft: '20px' }}> {/* Add space here */}
+      <div className="total-price" style={{ marginLeft: '20px' }}>
         Total Price: £{totalPrice}
       </div>
       <button>CHECKOUT</button>

@@ -1,10 +1,13 @@
-// ProductCard.jsx
-import React from "react";
+import React, { useState } from "react";
 import { Card, Button, Dropdown } from 'react-bootstrap';
+import { useDispatch, useSelector } from 'react-redux';
+import { addItem, removeItem } from '../store/cartSlice';
 import "./ProductCard.css";
 
-export function ProductCard({ product, cart, setCart }) {
-  const [selectedColor, setSelectedColor] = React.useState('');
+export function ProductCard({ product }) {
+  const [selectedColor, setSelectedColor] = useState('');
+  const dispatch = useDispatch();
+  const cartItems = useSelector((state) => state.cart.items);
 
   const colorOptions = () => {
     if (["Protein Powder", "Creatine", "MassGainer"].includes(product.title)) {
@@ -15,15 +18,24 @@ export function ProductCard({ product, cart, setCart }) {
   };
 
   function handleAddToCart() {
-    const itemWithColor = { ...product, color: selectedColor };
-    setCart([...cart, itemWithColor]);
+    if (selectedColor) {
+      const itemWithColor = { ...product, color: selectedColor };
+      dispatch(addItem(itemWithColor));
+    } else {
+      alert("Please select a color before adding to cart.");
+    }
   }
 
   function handleRemoveFromCart() {
-    setCart(cart.filter((item) => !(item.title === product.title && item.color === selectedColor)));
+    if (selectedColor) {
+      const itemToRemove = { ...product, color: selectedColor };
+      dispatch(removeItem(itemToRemove));
+    } else {
+      alert("Please select a color to remove from cart.");
+    }
   }
 
-  const isInCart = cart.some((item) => item.title === product.title && item.color === selectedColor);
+  const isInCart = cartItems.some((item) => item.title === product.title && item.color === selectedColor);
 
   return (
     <Card style={{ width: '18rem' }} className="ProductCard d-flex flex-column">
@@ -33,7 +45,11 @@ export function ProductCard({ product, cart, setCart }) {
         <Card.Text>{product.desc}</Card.Text>
 
         <Dropdown className="mt-2">
-          <Dropdown.Toggle variant="outline-secondary" id="dropdown-color">
+          <Dropdown.Toggle
+            variant="outline-secondary"
+            id="dropdown-color"
+            className="product-card-dropdown-toggle" // Added this class
+          >
             {selectedColor ? `Color: ${selectedColor}` : "Select Color"}
           </Dropdown.Toggle>
 
@@ -62,7 +78,7 @@ export function ProductCard({ product, cart, setCart }) {
             onClick={handleAddToCart}
             disabled={!selectedColor}
           >
-            Buy {/* Changed text to "Buy" */}
+            Buy
           </Button>
         </div>
       </Card.Body>

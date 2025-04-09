@@ -1,3 +1,4 @@
+// App.jsx
 import './App.css';
 import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-dom";
 import { Layout } from './components/Layout';
@@ -8,12 +9,10 @@ import { Contact } from './pages/Contact';
 import { Home } from './pages/Home';
 import { Products } from './pages/Products';
 import { Cart } from './pages/Cart';
-import { useState } from 'react';
 import { useSelector } from 'react-redux'; // Import useSelector
 
 function App() {
-  const [cart, setCart] = useState([]);
-  const isLoggedIn = useSelector((state) => state.auth.isLoggedIn); // Get isLoggedIn from Redux
+  const isLoggedIn = useSelector((state) => state.auth.isLoggedIn);
 
   const ProtectedRoute = ({ children }) => {
     if (!isLoggedIn) {
@@ -25,19 +24,19 @@ function App() {
   return (
     <Router>
       <Routes>
-        <Route element={<Layout cart={cart} setCart={setCart} />}>
+        <Route element={<Layout />}> {/* Removed cart and setCart props */}
           <Route path="/" element={<Home />} />
-          <Route path="/Login" element={<Login />} /> {/* Removed onLoginStatusChange */}
-          <Route path="/Registration" element={<Registration />} /> {/* Removed onLoginStatusChange */}
+          <Route path="/Login" element={<Login />} />
+          <Route path="/Registration" element={<Registration />} />
           <Route path="/Home" element={<Home />} />
-          <Route path="/Products" element={<Products cart={cart} setCart={setCart} />} />
+          <Route path="/Products" element={<Products />} /> {/* Removed cart and setCart props */}
           <Route path="/About" element={<About />} />
           <Route path="/Contact" element={<Contact />} />
           <Route
             path="/Cart"
             element={
               <ProtectedRoute>
-                <Cart cart={cart} setCart={setCart} />
+                <Cart /> {/* Removed cart and setCart props */}
               </ProtectedRoute>
             }
           />

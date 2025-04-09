@@ -1,18 +1,20 @@
-// Registration.jsx
 import React, { useState } from 'react';
 import { Formik, Form, useField } from 'formik';
 import "./Login.css";
 import { Link, useNavigate } from "react-router-dom";
 import * as Yup from 'yup';
 import { useDispatch } from 'react-redux';
-import { login } from '../store/authSlice'; // Assuming you kept the authSlice in the store folder
+import { login } from '../store/authSlice';
 
 const MyTextInput = ({ label, ...props }) => {
     const [field, meta] = useField(props);
     return (
         <div style={{ marginBottom: '10px' }}>
             <label htmlFor={props.id || props.name}>{label}</label>
-            <input className="text-input" {...field} {...props} />
+            <input className="text-input"  style={{ 
+                    border: '1px solid grey', 
+                    padding: '8px', 
+                    borderRadius: '4px', }} {...field} {...props} />
             {meta.touched && meta.error ? (
                 <div className="error">{meta.error}</div>
             ) : null}
@@ -45,8 +47,8 @@ export const Registration = () => {
     };
 
     return (
-        <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100vh' }}>
-            <div className="login-box" style={{ borderRadius: '8px' }}>
+        <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100vh'}}>
+            <div className="login-box" style={{ borderRadius: '8px', width:'80vw'  }}>
                 <h1>Register</h1>
                 <Formik
                     initialValues={{
@@ -89,13 +91,13 @@ export const Registration = () => {
                             alert(JSON.stringify(values, null, 2));
                             setSubmitting(false);
 
-                            // Store registration details in localStorage (for this basic example)
+                            // Store registration details in localStorage
                             localStorage.setItem("registeredUsername", values.username);
                             localStorage.setItem("registeredPassword", values.password);
                             localStorage.setItem("registeredFirstName", values.firstName);
                             localStorage.setItem("registeredLastName", values.lastName);
 
-                            // Dispatch login action to update Redux state
+                            // Dispatch login action
                             dispatch(
                                 login({
                                     username: values.username,
@@ -172,15 +174,14 @@ export const Registration = () => {
     );
 };
 
+
+
 // https://formik.org/docs/guides/validation Accessed 8th April 2025 - re username and scheme validation
 // https://formik.org/docs/tutorial#schema-validation-with-yup Accessed 8th April 2025 - re username and scheme validation
 // https://formik.org/docs/overview Accessed 20th March 2025 for base structure of code
 // https://formik.org/docs/overview Accessed 20th March 2025 for base structure of code
 // https://codesandbox.io/p/sandbox/zKrK5YLDZ Accessed 20th March 2025
 // Hyperion Dev React - Form Validation Accessed 20th March 2025
-// I know we only required validation & not authentification but after doing a similar
-// task as part of a job application I wanted to add authentification.
-// Reason behind on task was 2 weeks on different aplication tasks & adding to website
-// "Passed" both and also had interviews -  failed interviews seeking career support.
+
 // http://eriksmith.great-site.net/Login/index.html -  Accessed & Utilised learning from
 // this which is now also present on my personal website.

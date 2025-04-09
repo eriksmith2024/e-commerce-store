@@ -1,9 +1,12 @@
-import React, { useState } from 'react';
+import React from 'react';
+import {  } from "react-bootstrap";
+import { useDispatch, useSelector } from 'react-redux';
+import {  } from '../store/cartSlice';
 import { ProductCard } from "../components/ProductCard";
 import "./Products.css";
 
 
-export function Products({ cart, setCart }) {
+export function Products() {
   const products = [
     { title: "Protein Powder", desc: "Whey protein powder used to build muscle", price: 40, image: "/whey_protein.jpg" },
     { title: "Creatine", desc: "Creatine monohydrate used to supplement your athleticism", price: 25, image: "/creatine.jpg" },
@@ -17,11 +20,14 @@ export function Products({ cart, setCart }) {
     { title: "15-20KG Weights", desc: "Two Adjustable plates of 15kg to 20kg", price: 20, image: "/smart_weights.png" }
   ];
 
+
   return (
-    <div className="products-grid">
-      {products.map((product) => (
-        <ProductCard key={product.title} product={product} cart={cart} setCart={setCart} />
-      ))}
+    <div className="products-container"> {/* Added this wrapper div */}
+      <div className="products-grid">
+        {products.map((product) => (
+          <ProductCard key={product.title} product={product}  />
+        ))}
+      </div>
     </div>
   );
 }

@@ -5,14 +5,14 @@
     border-bottom: black 3px solid;
     display: flex;
     flex-direction: column;
-    justify-content: flex-start; /* Adjusted */
+    justify-content: flex-start;
 }
 
 .Card.Body {
     display: flex;
     flex-direction: column;
     flex-grow: 1;
-    justify-content: flex-start; /* Adjusted */
+    justify-content: flex-start;
 }
 
 .btns {
@@ -20,6 +20,17 @@
     display: flex;
     justify-content: center;
     gap: 10px;
+}
+
+.btns button {
+    margin-right: 10px;
+    border: 1px solid black;
+    padding: 5px 10px;
+    font-size: 1rem;
+}
+
+.btns button:hover {
+    border: 2px solid blue;
 }
 
 .ImageTitleRemove {
@@ -54,7 +65,7 @@
     margin: 0;
 }
 
-.priceBox-cart { /* New style for cart price */
+.priceBox-cart {
     display: inline-block;
     background-color: cadetblue;
     border-radius: 15px;
@@ -63,7 +74,7 @@
     font-size: x-large;
     max-width: 100px;
     padding: 5px;
-    margin: 5px auto -25px auto; /* Adjusted */
+    margin: 5px auto -25px auto;
     position: relative;
     z-index: 1;
 }
@@ -106,7 +117,7 @@ button {
 .ProductCard .dropdown {
     position: static;
     width: 100%;
-    margin-bottom: 5px; /* Adjusted */
+    margin-bottom: 5px;
 }
 
 .ProductCard .dropdown-menu {
@@ -147,11 +158,19 @@ button {
     width: 50%
 }
 
-.cart-item-details { /* New style */
+.cart-item-details {
     display: flex;
     flex-direction: column;
 }
 
-.cart-item-info { /* New style */
-    margin-bottom: 2px; /* Reduced spacing */
+.cart-item-info {
+    margin-bottom: 2px;
+}
+
+.product-card-dropdown-toggle {  /* Added this style  */
+    border: 1px solid black;
+}
+
+.product-card-dropdown-toggle:hover { /* Added this hover style */
+    border: 2px solid blue;
 }

@@ -51,7 +51,7 @@ export const Login = () => {
     };
 
     return (
-        <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100vh' }}>
+        <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100vh', width: '80vw' }}>
             <div className="login-box" style={{ borderRadius: '8px' }}>
                 <h1>Login</h1>
                 {isLoggedIn ? (

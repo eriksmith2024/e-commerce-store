@@ -1,34 +1,28 @@
-import { useState, useEffect } from 'react';
+// Cart.jsx
+import { useSelector, useDispatch } from 'react-redux';
+import { removeItem } from '../store/cartSlice';
 import { TotalPrice } from '../components/TotalPrice';
-import './Cart.css'; 
+import './Cart.css';
 
-export function Cart({ cart, setCart }) {
-  const [itemQuantities, setItemQuantities] = useState({});
+export function Cart() {
+  const cartItems = useSelector((state) => state.cart.items);
+  const dispatch = useDispatch();
 
-  useEffect(() => {
-    const quantities = {};
-    cart.forEach(item => {
-      const key = `${item.title}-${item.color}`;
-      quantities[key] = (quantities[key] || 0) + 1;
-    });
-    setItemQuantities(quantities);
-  }, [cart]);
+  const itemQuantities = {};
+  cartItems.forEach(item => {
+    const key = `${item.title}-${item.color}`;
+    itemQuantities[key] = (itemQuantities[key] || 0) + 1;
+  });
 
   function handleClick(item) {
-    const key = `${item.title}-${item.color}`;
-    const updatedCart = [...cart];
-    const index = updatedCart.findIndex(cartItem => cartItem.title === item.title && cartItem.color === item.color);
-    if (index !== -1) {
-      updatedCart.splice(index, 1);
-      setCart(updatedCart);
-    }
+    dispatch(removeItem(item));
   }
 
   return (
     <>
       {Object.entries(itemQuantities).map(([key, quantity]) => {
         const [title, color] = key.split('-');
-        const item = cart.find(cartItem => cartItem.title === title && cartItem.color === color);
+        const item = cartItems.find(cartItem => cartItem.title === title && cartItem.color === color);
         if (!item) return null;
 
         return (
@@ -50,9 +44,7 @@ export function Cart({ cart, setCart }) {
         );
       })}
 
-      {/* Use the new TotalPrice component */}
-      <TotalPrice cart={cart} />
+      <TotalPrice cart={cartItems} />
     </>
   );
 }
-
