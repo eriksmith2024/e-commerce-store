@@ -12,23 +12,42 @@
   </body>
 </html>
 
-<!-- Testing:
-1a - Each Page is respponsive adjusts correctly from laptop to movile - all elements visible - 
-1b - Can't login if empty. Login - works with Welcome + name appearing on clicking login. Button changes to Logout. 
-1c - On clicking Logout changes back to login and name is removed.
-2a - All page links work + View Products link works + Contact link works on About page.
-3a - 10 product items listed in two columns adjust to one for mobile - 
-3b - All products tested with at least 1 color successfully adding to cart both on cart page & header
-3c - Drop down color selector menu works with hover with 3 colors / flavors listed 
-3d - Drop down menu placeholder changes to color chosen as requested.
-6a - Bootsrap templates utilised & then adapated.
-4a - Remove item works when color selected for matching color of matching product selected.
-4b - Items selected appear on cart page & header with quantifty and color on clicking buy - 
-4c - Total price and total items adds up and subtracts displaying correctly. 
-5a - Cart items total is listed on top right hand corner of page via header component
-5b - cart item does not show on home page
-6a - Name email and question update on submit with state changing from placeholder
-7a - All about features listed as reuested
+<!-- TESTING AGAINST TASK REQUIRMENTS:
+1a - UI Components: At least 4 attractively styled components (e.g., using React-Bootstrap Cards for products, a styled Navbar for navigation, a custom modal for help, and themed buttons) are implemented.
+1b - Responsive Design: The layout and all components adapt correctly and are fully visible across different screen sizes (laptop and mobile).
+2a - Registration Validation:
+    b - First name field requires input.
+    c - Surname field requires input.
+    d - Username field requires input.
+    e - Email address field requires a valid email format.
+    f - Password field requires a strong password (e.g., minimum length, including numbers and symbols).
+    g - Appropriate error messages are displayed for invalid or missing input during registration.
+    h - Successful registration (though actual user persistence isn't a strict requirement for this test log based on the provided tasks).
+3a - Login Functionality:
+    b - Cannot log in if the username field is empty.
+    c - Login is successful with a valid username (as stored in state for this test).
+    d - Upon successful login, the stored username is displayed in the header component.
+4a - Header Navigation: A navigation menu is present in the header component and is visible on all URLs (landing page, store/product page, cart page).
+4b - Navigation Links: All links in the header navigation menu are functional and navigate to the correct pages.
+5a - Components Rendered with Map(): At least one component (e.g., product cards on the store page, items in the cart) is rendered using the `array.map()` method.
+5b - Unique Keys: Each component rendered using `array.map()` has a unique `key` prop.
+6a - State Modification on Interaction: User interactions (e.g., selecting a color, clicking "Buy," changing quantity, selecting shipping method, opening help) modify the state of relevant components.
+7a - Redux State Management: The application utilizes Redux for managing global state (e.g., user login status, cart contents, selected shipping method).
+8a - Adding to Cart:
+    b - Clicking a "Buy" button adds the selected product (including any chosen options like color) to the "cart" state in Redux.
+    c - Multiple items can be added to the cart.
+9a - Cart Display:
+    a - The cart page displays the user's selected items.
+    c - The cart page shows relevant details for each item (e.g., name, color, quantity, price).
+    d - The cart page calculates and displays the total cost of the items in the cart.
+10a - Shipment Selection: On the checkout page the user can select a method of shipment from at least one option.
+10b - Shipment Storage: The selected shipment method is stored in the Redux state.
+11a - Help Request: A clearly identifiable "Help" button allows the user to request information about shipping options.
+11b - Shipping Information Display: Upon requesting help, details about the available shipping options are displayed to the user in an easily understandable format.
+12a - UI Attractiveness and Intuition: The overall user interface is visually appealing and the navigation is easy to understand.
+13a - Git Repository Initialized: A Git repository has been successfully initialized in the project folder.
+14a - README.md File: A file named "README.md" exists in the project folder.
+14b - README Content: The "README.md" file provides a basic explanation of the application and instructions on how to use it.
 
 
 

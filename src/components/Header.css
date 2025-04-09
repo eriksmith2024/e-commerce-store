@@ -8,7 +8,7 @@
     width: 60%;
     margin: 0 auto;
     position: fixed;
-    top: 35px;
+    top: 5vh;
     left: 50%;
     transform: translateX(-50%);
     z-index: 100;
@@ -37,32 +37,77 @@
     text-align: center;
 }
 
+.header-cart h2 {
+    margin: 0; /* Reset default h2 margin */
+}
+
 .header strong {
     font-weight: 700;
     font-size: 1.2rem;
     color: #007bff;
 }
 
-/* Media query for smaller screens */
+/* Media query for screens up to approximately 1200px (adjust as needed for 12-inch) */
+@media (max-width: 1200px) {
+    .header {
+        width: 60%; /* Adjust width for smaller laptops */
+        height: 50px; /* Adjust height if content wraps */
+        flex-direction: row; /* Keep items in a row */
+        align-items: center; /* Center items vertically */
+    }
+
+    .header h1 {
+        font-size: 1rem; /* Reduced from 1.5rem */
+    }
+
+    .header-welcome h2 {
+        font-size: 0.8rem; /* Reduced from 1.2rem (considering strong) */
+        padding-bottom: 5px;
+    }
+
+    .header-cart h2 {
+        font-size: 0.8rem; /* Reduced from 1.2rem */
+    }
+}
+
+/* Media query for even smaller screens (e.g., mobile) */
 @media (max-width: 768px) {
     .header {
         width: 100%;
-        top: 0;
+        top: 12vh; /* Tweaked to hide business name & welcome on mobile*/
         left: 0;
         transform: translateX(0);
         border-radius: 0;
         flex-direction: column;
-        height: 180px; /* Changed from a fixed height to auto */
-        padding: 0px 0;
+        height: auto;
+        padding: 10px 0;
+        align-items: center; /* Center items horizontally */
     }
 
-  
+    .header-title {
+        margin: 5px auto; /* Add some top/bottom margin */
+    }
+
+    .header h1 {
+        font-size: 0.5rem; /* Further reduced for mobile */
+    }
+
+    .header-welcome {
+        margin: 5px auto;
+        padding-bottom: 5px;
+    }
+
+    .header-welcome h2 {
+        font-size: 0.8rem; /* Further reduced for mobile */
+        margin: 0; /* Reset previous margins */
+    }
+
     .header-cart {
-        margin: -35px 0;
-        text-align: center;
+        margin: 5px auto;
     }
 
-    .header h1{
-        font-size: 1.2rem;
+    .header-cart h2 {
+        font-size: 1rem; /* Further reduced for mobile */
+        margin: 0; /* Reset previous margins */
     }
 }

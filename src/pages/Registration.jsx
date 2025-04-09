@@ -11,9 +11,9 @@ const MyTextInput = ({ label, ...props }) => {
     return (
         <div style={{ marginBottom: '10px' }}>
             <label htmlFor={props.id || props.name}>{label}</label>
-            <input className="text-input"  style={{ 
-                    border: '1px solid grey', 
-                    padding: '8px', 
+            <input className="text-input"  style={{
+                    border: '1px solid grey',
+                    padding: '8px',
                     borderRadius: '4px', }} {...field} {...props} />
             {meta.touched && meta.error ? (
                 <div className="error">{meta.error}</div>
@@ -47,7 +47,7 @@ export const Registration = () => {
     };
 
     return (
-        <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100vh'}}>
+        <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100vh', marginTop: '80px' }}>
             <div className="login-box" style={{ borderRadius: '8px', width:'80vw'  }}>
                 <h1>Register</h1>
                 <Formik
@@ -173,15 +173,3 @@ export const Registration = () => {
         </div>
     );
 };
-
-
-
-// https://formik.org/docs/guides/validation Accessed 8th April 2025 - re username and scheme validation
-// https://formik.org/docs/tutorial#schema-validation-with-yup Accessed 8th April 2025 - re username and scheme validation
-// https://formik.org/docs/overview Accessed 20th March 2025 for base structure of code
-// https://formik.org/docs/overview Accessed 20th March 2025 for base structure of code
-// https://codesandbox.io/p/sandbox/zKrK5YLDZ Accessed 20th March 2025
-// Hyperion Dev React - Form Validation Accessed 20th March 2025
-
-// http://eriksmith.great-site.net/Login/index.html -  Accessed & Utilised learning from
-// this which is now also present on my personal website.
