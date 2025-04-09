@@ -1,59 +1,40 @@
-<!-- Really struggled with this task 
-I spent a week reviewing and updating my personal website and then a week doing a task for a job role with the LUHN algorithm and credit card verification which I passed. The time out meant I had to go back and re-read all the prior docs and half redo all the prior tasks & exercises to get back my react understanding. Even then it really was a challenge. 
+# EJS Gym Solutions - React Gym Store App
+This is a simple gym equipment and supplement store built using React and Redux.
 
-DATES OF ACCESS MAY VARY SLIGHTLY BUT BASICALLY REVIEWED AND RE-DID EACH ONE OVER A DAY OR DAY AND HALF
-HyperioDev Level2-Front End Development/L2T01- NodeJS/11-033-2 NodeJS.pdf Accessed Monday 10th March 2025
-Hyperion Dev - Front End Development /L2T02 - React - Overview/ Accessed Tuesday 11th March 2025
-Hyperion Dev - Front End Development /L2T03 - React - Elements/ Accessed Wenesday 12th Match 2025
-Hyperion Dev - Level 2 - Front End Development /L2T04 - React - Components/ Accessed 13th March 2025
-Hyperion Dev Level 2 - Front End Development /L2T05 - React - Local State Management & Events/ Accessed 14th March 2025
-Hyperion Dev Level 2 - Front End Development /L2T06 - React - Hooks/ Accessed 15th March 2025
-Hyperion Dev Level 2 - /Level 2 - Front End Development/L2T07 - React - Routing/ Accessed 7th -19th March 2025
+## Key Features
+
+Product Listings: Browse a variety of gym products.
+**Add to Cart:** Add items to your shopping cart.
+**Cart Management:** View and remove items from your cart.
+**User Authentication:** Registration and login functionality.
+**Checkout:** Select a shipping method and view order summary.
+**Shipping Help:** Information about available shipping options.
+
+## Technologies Used
+
+* React
+* Redux Toolkit for state management
+* React Router for navigation
+* React Bootstrap for UI components
+
+## Setup Instructions
+
+1.  **Install Dependencies:**
+    npm install
+ 
+
+2.  **Start the Development Server:**
+    npm run dev for using React Vite
 
 
-https://www.youtube.com/watch?v=XrtZynBLpXo Accessed 14th March 2025 - Multi page store Project initially structured around this video -->
+    This will start the application in development mode, usually on `http://localhost:5173/`.
 
-<!-- https://www.youtube.com/watch?v=7y-YyEH-eF8 Youtube video accessed 18th March 2025  around logins https://www.youtube.com/watch?v=RpbtR9XFSRE Youtube Video accessed 18th March 2025 
+## Important Notes
+* Image files are expected to be in the `public/images` folder.
+* User authentication details are currently stored in `localStorage` for simplicity.
 
-https://www.youtube.com/watch?v=psU13XU1gDY Youtube Video -  Accessed 18th March 2025 - 
-https://www.youtube.com/watch?v=UBV2vtkKR5o Youtube Video Accessd 18th March 2025
+## Ideas for Further Development
 
-https://stackoverflow.com/questions/69173268/ stack overflow Accessed 18th March 2025 
-https://www.geeksforgeeks.org/react-hook-form-create-basic-reactjs-registration-and-login-form/? Accessed 18th March 2025
-how-can-i-use-local-storage-with-the-login-functionality-in-react? Accessed 18th March 2025
-https://stackoverflow.com/questions/74788127/react-and-localstorage? Accessed 18th March 2025
-
-
-VARIOUS Gemini chats Accessed 19th March 2025
-https://gemini.google.com/app/8b8b76763f91b2c7?is_sa=1&is_sa=1&android-min-version=301356232&ios-min-version=322.0&campaign_id=bkws&utm_source=sem&utm_source=google&utm_medium=paid-media&utm_medium=cpc&utm_campaign=bkws&utm_campaign=2024enGB_gemfeb&pt=9008&mt=8&ct=p-growth-sem-bkws&gad_source=1&gclid=Cj0KCQjw1um-BhDtARIsABjU5x4rDIbcmLJuOdm3FZ6sipmJwbGMvWVVg4BP-u29pq4VLIixllPX5HoaAhf2EALw_wcB&gclsrc=aw.ds 
-
-https://gemini.google.com/app/221b8f6d0c7e31a1?is_sa=1&is_sa=1&android-min-version=301356232&ios-min-version=322.0&campaign_id=bkws&utm_source=sem&utm_source=google&utm_medium=paid-media&utm_medium=cpc&utm_campaign=bkws&utm_campaign=2024enGB_gemfeb&pt=9008&mt=8&ct=p-growth-sem-bkws&gad_source=1&gclid=Cj0KCQjw1um-BhDtARIsABjU5x4rDIbcmLJuOdm3FZ6sipmJwbGMvWVVg4BP-u29pq4VLIixllPX5HoaAhf2EALw_wcB&gclsrc=aw.ds
-
-https://gemini.google.com/app/5f2604eaee0cb5a7?is_sa=1&is_sa=1&android-min-version=301356232&ios-min-version=322.0&campaign_id=bkws&utm_source=sem&utm_source=google&utm_medium=paid-media&utm_medium=cpc&utm_campaign=bkws&utm_campaign=2024enGB_gemfeb&pt=9008&mt=8&ct=p-growth-sem-bkws&gad_source=1&gclid=Cj0KCQjw1um-BhDtARIsABjU5x4rDIbcmLJuOdm3FZ6sipmJwbGMvWVVg4BP-u29pq4VLIixllPX5HoaAhf2EALw_wcB&gclsrc=aw.ds
-
-https://gemini.google.com/app/111bcafcae10da37?is_sa=1&is_sa=1&android-min-version=301356232&ios-min-version=322.0&campaign_id=bkws&utm_source=sem&utm_source=google&utm_medium=paid-media&utm_medium=cpc&utm_campaign=bkws&utm_campaign=2024enGB_gemfeb&pt=9008&mt=8&ct=p-growth-sem-bkws&gad_source=1&gclid=Cj0KCQjw1um-BhDtARIsABjU5x4rDIbcmLJuOdm3FZ6sipmJwbGMvWVVg4BP-u29pq4VLIixllPX5HoaAhf2EALw_wcB&gclsrc=aw.ds
-
-https://gemini.google.com/app/12c150bec1204a61?is_sa=1&is_sa=1&android-min-version=301356232&ios-min-version=322.0&campaign_id=bkws&utm_source=sem&utm_source=google&utm_medium=paid-media&utm_medium=cpc&utm_campaign=bkws&utm_campaign=2024enGB_gemfeb&pt=9008&mt=8&ct=p-growth-sem-bkws&gad_source=1&gclid=Cj0KCQjw1um-BhDtARIsABjU5x4rDIbcmLJuOdm3FZ6sipmJwbGMvWVVg4BP-u29pq4VLIixllPX5HoaAhf2EALw_wcB&gclsrc=aw.ds
-
-VARIOUS CHAT GPT Chats Accessed 19th March 2025
-https://chatgpt.com/c/67daa255-631c-8007-af4a-dc80c4459a91
-
-VARIOUS CHAT GPT Chats Accessed 18th March 2025
-https://chatgpt.com/c/67d9d9d0-1cac-8007-a99c-cf73473c6680
-
-https://chatgpt.com/c/67d9d7b1-9da4-8007-8503-da8748cc6244
-
-https://chatgpt.com/c/67d9d5db-ba0c-8007-a305-cf57ed3ad1ac
-
-https://chatgpt.com/c/67d9d31a-a5f4-8007-b147-cf7d52d65f6f
-
-https://chatgpt.com/c/67d9cf26-edf8-8007-97e3-f57919eca662
-
-https://chatgpt.com/c/67d9c7d5-509c-8007-9e29-482c14399b20
-
-https://chatgpt.com/c/67d98c92-5db8-8007-95c2-5180aa006b16
-
-https://chatgpt.com/c/67d9ad08-e150-8007-8874-680af4e8f8c6
-
--->
-
+* Implement payment processing.
+* Add more product details and filtering options.
+* Implement a backend 
