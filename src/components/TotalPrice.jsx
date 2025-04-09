@@ -18,7 +18,7 @@ export function TotalPrice() {
   }, [cart]);
 
   return (
-    <div className="cart-footer">
+    <div className="cart-footer" style={{ marginTop: '100px'}}>
       <div className="total-price">Total Items: {totalItems}</div>
       <div className="total-price" style={{ marginLeft: '20px' }}>
         Total Price: £{totalPrice}

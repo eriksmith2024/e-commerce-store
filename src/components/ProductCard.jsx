@@ -1,3 +1,4 @@
+// ProductCard.jsx
 import React, { useState } from "react";
 import { Card, Button, Dropdown } from 'react-bootstrap';
 import { useDispatch, useSelector } from 'react-redux';
@@ -20,6 +21,7 @@ export function ProductCard({ product }) {
   function handleAddToCart() {
     if (selectedColor) {
       const itemWithColor = { ...product, color: selectedColor };
+      console.log("Item dispatched to cart:", itemWithColor); // <--- ADD THIS LINE
       dispatch(addItem(itemWithColor));
     } else {
       alert("Please select a color before adding to cart.");
