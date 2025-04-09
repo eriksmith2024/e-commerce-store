@@ -2,12 +2,13 @@ import Figure from 'react-bootstrap/Figure';
 import { Link } from 'react-router-dom';
 import './About.css';
 
+// Defines the About page component providing information about the gym store.
 export function About() {
   return (
     <div className="about-container">
       <Figure>
         <Figure.Image
-          className="logo-image" 
+          className="logo-image"
           alt="Erik's Gym Store Logo"
           src="/EJS_logo.png"
         />
@@ -36,7 +37,7 @@ export function About() {
       <div className="store-images">
         <Figure>
           <Figure.Image
-            className="store-image" 
+            className="store-image"
             alt="Store Image 1"
             src="/store_interior.png"
           />

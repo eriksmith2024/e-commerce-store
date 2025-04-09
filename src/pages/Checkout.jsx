@@ -1,40 +1,44 @@
-// src/pages/Checkout.jsx
 import React, { useState } from 'react';
-import { useSelector, useDispatch } from 'react-redux';
-import { setShipmentMethod } from '../store/shipmentSlice';
-import { useNavigate } from 'react-router-dom';
-import './Checkout.css'; // Create this CSS file
+import { useSelector, useDispatch } from 'react-redux'; // Imports hooks to access the Redux store and dispatch actions.
+import { setShipmentMethod } from '../store/shipmentSlice'; // Imports the action creator to set the selected shipment method in Redux.
+import { useNavigate } from 'react-router-dom'; // Imports the useNavigate hook for programmatic navigation between routes.
+import './Checkout.css'; 
 
+// Defines the Checkout component, allowing users to review their cart and select a shipping method.
 export function Checkout() {
-  const cartItems = useSelector((state) => state.cart.items);
-  const totalItems = cartItems.reduce((sum, item) => sum + item.quantity, 0);
-  const totalPrice = cartItems.reduce((sum, item) => sum + item.price * item.quantity, 0);
-  const [selectedShipping, setSelectedShipping] = useState(null);
-  const dispatch = useDispatch();
-  const navigate = useNavigate();
-  const [showHelp, setShowHelp] = useState(false);
+  const cartItems = useSelector((state) => state.cart.items);  // Accesses array 'items'from the 'cart' section of data store(Redux).
+  const totalItems = cartItems.reduce((sum, item) => sum + (item.quantity || 1), 0); // Calculates the total number of items in the cart.
+  const totalPrice = cartItems.reduce((sum, item) => sum + item.price * (item.quantity || 1), 0);  // Calculates the total price of all items in the cart.
+  const [selectedShipping, setSelectedShipping] = useState(null);  // Manages the locally selected shipping method, initialized to null.
+  const dispatch = useDispatch(); // Provides a function to dispatch actions to the Redux store.
+  const navigate = useNavigate(); // Provides a function to navigate to different routes in the app.
+  const [showHelp, setShowHelp] = useState(false);  // Manages the visibility of the shipping help modal, initialized to false (hidden).
 
+  // Defines an array of available shipping options with their values, labels, and prices.
   const shippingOptions = [
     { value: 'standard', label: 'Standard Shipping (3-5 days)', price: 5 },
     { value: 'express', label: 'Express Shipping (1-2 days)', price: 10 },
     { value: 'free', label: 'Free Shipping (7-10 days) - Orders over £50', price: 0 },
   ];
 
+  // Handles the change event when a shipping method radio button is selected.
   const handleShippingChange = (event) => {
-    const method = event.target.value;
-    setSelectedShipping(method);
-    dispatch(setShipmentMethod(method));
+    const method = event.target.value; // Gets the value of the selected shipping method.
+    setSelectedShipping(method); // Updates the local state with the selected method.
+    dispatch(setShipmentMethod(method)); // Dispatches an action to update the selected shipping method in the Redux store.
   };
 
+  // Creates the click event for 'showHelp' modal at checkout.
   const handleHelpClick = () => {
-    setShowHelp(!showHelp);
+    setShowHelp(!showHelp); 
   };
 
+  // Handles the click event on the "Proceed to Payment" button.
   const handleProceedToPayment = () => {
     if (selectedShipping) {
-      navigate('/payment'); // You'll create this page later
+      navigate('/payment'); 
     } else {
-      alert('Please select a shipping method.');
+      alert('Please select a shipping method.'); 
     }
   };
 
@@ -42,22 +46,26 @@ export function Checkout() {
     <div className="checkout-container">
       <h2>Checkout</h2>
 
+      {/* Displays a summary of the items in the cart. */}
       <div className="cart-summary">
         <h3>Order Summary</h3>
         <p>Total Items: {totalItems}</p>
         <p>Subtotal: £{totalPrice.toFixed(2)}</p>
+        {/* Conditionally displays the selected shipping cost. */}
         {selectedShipping && (
           <p>
             Shipping ({
               shippingOptions.find((option) => option.value === selectedShipping)?.label.split('(')[0]
-            }): £{shippingOptions.find((option) => option.value === selectedShipping)?.price.toFixed(2)}
+            }): £{shippingOptions.find((option) => option.value === selectedShipping)?.price?.toFixed(2)}
           </p>
         )}
+        {/* Displays the estimated total cost, including shipping if selected. */}
         <p className="total">
           Total (Estimated): £{(totalPrice + (shippingOptions.find((option) => option.value === selectedShipping)?.price || 0)).toFixed(2)}
         </p>
       </div>
 
+      {/* Allows the user to select a shipping option. */}
       <div className="shipping-options">
         <h3>Shipping Options</h3>
         {shippingOptions.map((option) => (
@@ -69,9 +77,10 @@ export function Checkout() {
                 name="shippingMethod"
                 checked={selectedShipping === option.value}
                 onChange={handleShippingChange}
-                disabled={option.value === 'free' && totalPrice < 50}
+                disabled={option.value === 'free' && totalPrice < 50} // Disables free shipping if the order total is under £50.
               />
               {option.label} - £{option.price.toFixed(2)}
+              {/* Displays a note about the free shipping condition. */}
               {option.value === 'free' && totalPrice < 50 && (
                 <span className="disabled-note"> (Free on orders over £50)</span>
               )}
@@ -80,10 +89,12 @@ export function Checkout() {
         ))}
       </div>
 
+      {/* Button to show the shipping information modal. */}
       <button className="help-button" onClick={handleHelpClick}>
         Help with Shipping
       </button>
 
+      {/* Conditionally renders the shipping help modal. */}
       {showHelp && (
         <div className="shipping-help-modal">
           <h3>Shipping Information</h3>
@@ -102,6 +113,7 @@ export function Checkout() {
         </div>
       )}
 
+    
       <button
         className="proceed-button"
         onClick={handleProceedToPayment}

@@ -168,10 +168,10 @@ button {
     margin-bottom: 2px;
 }
 
-.product-card-dropdown-toggle {  /* Added this style  */
+.product-card-dropdown-toggle {  
     border: 1px solid black;
 }
 
-.product-card-dropdown-toggle:hover { /* Added this hover style */
+.product-card-dropdown-toggle:hover { 
     border: 2px solid blue;
 }

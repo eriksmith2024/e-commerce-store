@@ -6,7 +6,7 @@
     padding: 10px;
   }
  
-.ProductCard {
+.ProductCard {  /* Made simply to address the overlap of the header with the page*/
 top: 100px;
 }
   
@@ -17,7 +17,6 @@ top: 100px;
     }
   }
   
-  /* Cart.css */
 .cart-container {
   text-align: center;
   padding: 20px;

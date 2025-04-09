@@ -1,11 +1,8 @@
 import React from 'react';
-import {  } from "react-bootstrap";
-import { useDispatch, useSelector } from 'react-redux';
-import {  } from '../store/cartSlice';
 import { ProductCard } from "../components/ProductCard";
 import "./Products.css";
 
-
+// Create the list of products in an array
 export function Products() {
   const products = [
     { title: "Protein Powder", desc: "Whey protein powder used to build muscle", price: 40, image: "/whey_protein.jpg" },
@@ -22,10 +19,10 @@ export function Products() {
 
 
   return (
-    <div className="products-container"> {/* Added this wrapper div */}
+    <div className="products-container"> {/* Added this wrapper div to style */}
       <div className="products-grid">
-        {products.map((product) => (
-          <ProductCard key={product.title} product={product}  />
+        {products.map((product) => ( // Maps through 'products' array & displays a ProductCard for each product.
+          <ProductCard key={product.title} product={product}  /> // 'key' prop is essential to update list of product components.
         ))}
       </div>
     </div>

@@ -1,7 +1,8 @@
-import "./Home.css"; // Import the CSS file
+import "./Home.css";
 import { Link } from "react-router-dom";
 import BarbellImage from "../../public/Barbell.jpg";
 
+// Defines the Home page component, the landing page of the gym solutions store.
 export function Home() {
     return (
         <div className="home-container">
