@@ -18,7 +18,7 @@ This is a simple gym equipment and supplement store built using React and Redux.
 4.  **Navigate the site via links in the header**
     The home page alo has a link to view all Products 
     This is a suggested page after logging in
-    Choose to view home About or Contact if preferred
+    Choose to view Cart or About if preferred
 
 5.  **Add items to cart on Products page**
     Select a color version of the product 
