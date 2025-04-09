@@ -3,9 +3,9 @@ import "./Header.css";
 import { useSelector } from 'react-redux';
 
 export function Header() {
-    const cart = useSelector((state) => state.cart.items);
-    const totalItems = cart.length;
-    const totalPrice = cart.reduce((sum, item) => sum + item.price, 0);
+    const cartItems = useSelector((state) => state.cart.items); // Rename for clarity
+    const totalItems = cartItems.reduce((sum, item) => sum + (item.quantity || 1), 0); // Calculate total quantity
+    const totalPrice = cartItems.reduce((sum, item) => sum + item.price * (item.quantity || 1), 0);
     const { isLoggedIn, firstName, lastName } = useSelector((state) => state.auth);
 
     return (

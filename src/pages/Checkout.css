@@ -1,0 +1,108 @@
+/* src/pages/Checkout.css */
+.checkout-container {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+  }
+  
+  .cart-summary,
+  .shipping-options {
+    margin-bottom: 20px;
+    padding: 15px;
+    border: 1px solid #eee;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+  }
+  
+  .cart-summary h3,
+  .shipping-options h3 {
+    margin-top: 0;
+    margin-bottom: 10px;
+  }
+  
+  .shipping-options label {
+    display: block;
+    margin-bottom: 8px;
+  }
+  
+  .disabled-note {
+    color: red;
+    font-size: 0.9em;
+    margin-left: 5px;
+  }
+  
+  .help-button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-bottom: 15px;
+  }
+  
+  .help-button:hover {
+    background-color: #0056b3;
+  }
+  
+  .shipping-help-modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+  }
+  
+  .shipping-help-modal h3 {
+    margin-top: 0;
+    margin-bottom: 10px;
+  }
+  
+  .shipping-help-modal ul {
+    list-style-type: disc;
+    padding-left: 20px;
+  }
+  
+  .shipping-help-modal li {
+    margin-bottom: 8px;
+  }
+  
+  .shipping-help-modal button {
+    background-color: #6c757d;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+  }
+  
+  .shipping-help-modal button:hover {
+    background-color: #5a6268;
+  }
+  
+  .proceed-button {
+    background-color: #28a745;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.1em;
+  }
+  
+  .proceed-button:hover {
+    background-color: #1e7e34;
+  }
+  
+  .proceed-button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+  }

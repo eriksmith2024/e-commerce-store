@@ -9,7 +9,8 @@ import { Contact } from './pages/Contact';
 import { Home } from './pages/Home';
 import { Products } from './pages/Products';
 import { Cart } from './pages/Cart';
-import { useSelector } from 'react-redux'; // Import useSelector
+import { Checkout } from './pages/Checkout'; // Import Checkout
+import { useSelector } from 'react-redux';
 
 function App() {
   const isLoggedIn = useSelector((state) => state.auth.isLoggedIn);
@@ -24,19 +25,27 @@ function App() {
   return (
     <Router>
       <Routes>
-        <Route element={<Layout />}> {/* Removed cart and setCart props */}
+        <Route element={<Layout />}>
           <Route path="/" element={<Home />} />
           <Route path="/Login" element={<Login />} />
           <Route path="/Registration" element={<Registration />} />
           <Route path="/Home" element={<Home />} />
-          <Route path="/Products" element={<Products />} /> {/* Removed cart and setCart props */}
+          <Route path="/Products" element={<Products />} />
           <Route path="/About" element={<About />} />
           <Route path="/Contact" element={<Contact />} />
           <Route
             path="/Cart"
             element={
               <ProtectedRoute>
-                <Cart /> {/* Removed cart and setCart props */}
+                <Cart />
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path="/checkout"
+            element={
+              <ProtectedRoute>
+                <Checkout />
               </ProtectedRoute>
             }
           />
