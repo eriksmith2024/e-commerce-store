@@ -59,7 +59,7 @@ export function About() {
       </div>
 
       <p>
-        Have questions? <Link to="/contact">Contact us</Link> today.
+        Have questions? <Link to="/home">Contact us</Link> today.
       </p>
     </div>
   );
